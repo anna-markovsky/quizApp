@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Book Antiqua", sans-serif;
+    margin: 0;
+    background: url('background.jpg');
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    border: 5px solid rebeccapurple;
+    background-color: ghostwhite;
+    margin: 50px auto;
+    max-width: 700px;
+    font-family: "Book Antiqua", sans-serif
+}
+
+p{
+    border: 3px solid rebeccapurple;
+    background-color: ghostwhite;
+    margin:50px;
+    padding: 20px;
+    align-items: center;
+    font-weight: bold;
+
+}
+
+
+
+#question {
+    margin-bottom: 20px;
+}
+
+#options{
+    display:grid;
+    gap:10px
+}
+
+#image{
+    width:600px;
+    height:300px;
+    border:2px solid black;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+#quiz{
+    margin:auto;
+    width:100%;
+    padding:10px;
+    border: 3px solid black;
+    align-items: center;
+}
+
+
+
+button {
+    color: black;
+    padding: 10px 20px;
+    border: solid rebeccapurple;
+    cursor: pointer;
+    font-size: 22px;
+    font-family: "Book Antiqua", sans-serif;
+    border-radius: 70px;
+    width:500px;
+    background-color: mediumpurple;
+    text-align: center;
+
+}
+
+#previous{
+    float: left;
+    width:150px;
+    text-align: center;
+    bottom: auto;
+}
+#next{
+    float: left;
+    width:150px;
+    text-align: center;
+    bottom: auto;
+}
+
+#submit{
+    float: left;
+    width:150px;
+    text-align: center;
+    bottom: auto;
+}
+#previous, #next, #submit {
+    margin: 10px;
+    flex-grow: 1;
+}
+
+button:hover {
+    bottom: -1000px;
+    background-color: ghostwhite;
+}
+
+#quizResult {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.background {
+    max-width:100%;
+    height:auto;
+
+}
+.correct{
+    border:3px solid darkgreen;
+    background-color: lightgreen;
+    color:green;
+}
+
+.incorrect{
+    background-color: lightcoral;
+    border:3px solid darkred;
+    color:crimson;
+}
+
+.disabled{
+    background-color: grey;
+    border:3px solid black;
+
+}
