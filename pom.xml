@@ -31,14 +31,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Remove the following dependency -->
-        <!--
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>demo1</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        -->
     </dependencies>
 
     <build>
