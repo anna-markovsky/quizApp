@@ -62,17 +62,17 @@ function displayquestion() {
  questionOutput.innerText = question.question;
  imageOutput.src = imageData[questionNumber];
  optionsOutput.innerHTML = "";
-
+ if (alreadyAnswered.includes(questionNumber)) {
+  nextButton.disabled = false;
+  nextButton.classList.add("show");
+ }
  question.options.forEach(option => {
   const button = document.createElement("button");
   button.innerText = option;
   optionsOutput.appendChild(button);
-  if (alreadyAnswered.includes(questionNumber)) {
-   nextButton.disabled = false;
-   nextButton.classList.add("show");
-  } else {
+
   button.addEventListener("click", chooseAnswer);
- }
+
  });
 
 
