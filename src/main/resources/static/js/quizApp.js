@@ -56,16 +56,14 @@ submitButton.addEventListener('click',goToResult)
 
 //Make a function that displays the question at the corresponding number in array and the options to choose from.
 function displayquestion() {
- nextButton.disabled = true;
+ //nextButton.disabled = true;
+ //nextButton.disabled = false;
  submitButton.disabled = true;
  const question = quizData[questionNumber];
  questionOutput.innerText = question.question;
  imageOutput.src = imageData[questionNumber];
  optionsOutput.innerHTML = "";
- if (alreadyAnswered.includes(questionNumber)) {
-  nextButton.disabled = false;
-  nextButton.classList.add("show");
- }
+
  question.options.forEach(option => {
   const button = document.createElement("button");
   button.innerText = option;
@@ -91,7 +89,7 @@ function chooseAnswer(choice) {
  }
 
  else {
-  nextButton.disabled = false;
+  nextButton.disabled = true;
   const selectedButton = choice.target;
   const answer = quizData[questionNumber].answer;
   const selectedChoice = selectedButton.innerText;
@@ -123,6 +121,7 @@ function chooseAnswer(choice) {
 
   } else {
    alreadyAnswered.push(questionNumber);//pushes the current questionNumber into the array that keeps track of answered questionNumbers
+   nextButton.disabled = false;
    nextButton.classList.add("show");
   }
  }
