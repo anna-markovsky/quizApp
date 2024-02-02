@@ -67,7 +67,10 @@ function displayquestion() {
   const button = document.createElement("button");
   button.innerText = option;
   optionsOutput.appendChild(button);
-
+  if (alreadyAnswered.includes(questionNumber)){
+   nextButton.disabled = false;
+   nextButton.classList.add("show");
+  }
   button.addEventListener("click", chooseAnswer);
  });
 
