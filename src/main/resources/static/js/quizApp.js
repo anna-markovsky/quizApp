@@ -56,8 +56,7 @@ submitButton.addEventListener('click',goToResult)
 
 //Make a function that displays the question at the corresponding number in array and the options to choose from.
 function displayquestion() {
- //nextButton.disabled = true;
- //nextButton.disabled = false;
+ nextButton.disabled = true;
  submitButton.disabled = true;
  const question = quizData[questionNumber];
  questionOutput.innerText = question.question;
@@ -69,23 +68,26 @@ function displayquestion() {
   button.innerText = option;
   optionsOutput.appendChild(button);
 
-  button.addEventListener("click", chooseAnswer);
-
+  // Check if the question has already been answered
+  if (alreadyAnswered.includes(questionNumber)) {
+   nextButton.disabled=false;
+  } else {
+   button.addEventListener("click", chooseAnswer);
+  }
  });
-
-
 }
 
-// creating the new div tags which for icons
-let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
-let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
+
+
 
 //Make a function that checks if the option selected was correct
 function chooseAnswer(choice) {
  //Check if the question has already been answered, if so disable all the option buttons
- if (alreadyAnswered.includes(questionNumber)){
+ if (alreadyAnswered.includes(questionNumber)) {
   nextButton.disabled = false;
   nextButton.classList.add("show");
+
  }
 
  else {
@@ -115,11 +117,14 @@ function chooseAnswer(choice) {
   }
   //Check if we reached the last question
   if (questionNumber === quizData.length - 1) {
+
    submitButton.disabled = false;
    nextButton.disabled =true;
+   prevButton.disabled = true;
    submitButton.classList.add("show");
 
-  } else {
+  }
+   else {
    alreadyAnswered.push(questionNumber);//pushes the current questionNumber into the array that keeps track of answered questionNumbers
    nextButton.disabled = false;
    nextButton.classList.add("show");
